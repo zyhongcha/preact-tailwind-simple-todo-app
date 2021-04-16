@@ -8,16 +8,21 @@ export type Todo = {
     done: boolean 
 }
 
-export type TodoProps = {
+type TodoProps = {
     todo: Todo
+    handleDeleteTodo: (id: number) => void
+    handleCheckTodo: (id: number) => void
 }
 
-// function Row({todo: {title, descr, done}}: TodoProps ) {
-export const Row = ({todo: {title, descr, done}}: TodoProps ) => (
+export const Row = ({todo: {id, title, descr, done},
+    handleDeleteTodo,
+    handleCheckTodo
+}: TodoProps ) => (
         <div>
         <p>{title}</p>
         <p>{descr}</p>
         <p>{done}</p>
-
+        <button aria-label="Delete a todo" onClick={() => handleDeleteTodo(id) }>Delete</button>
+        <input type="checkbox" checked={done} onChange={() => handleCheckTodo(id)} />
         </div>
     )
