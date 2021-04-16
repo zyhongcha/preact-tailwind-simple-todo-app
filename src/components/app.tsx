@@ -6,6 +6,8 @@ import Profile from '../routes/profile';
 import NotFoundPage from '../routes/notfound';
 import Header from './header';
 
+import {Todos} from './todos'
+
 const App: FunctionalComponent = () => {
     return (
         <div id="preact_root">
@@ -16,6 +18,7 @@ const App: FunctionalComponent = () => {
                 <Route path="/profile/:user" component={Profile} />
                 <NotFoundPage default />
             </Router>
+            <Todos/>
         </div>
     );
 };
