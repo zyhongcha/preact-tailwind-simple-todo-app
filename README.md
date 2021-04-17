@@ -1,4 +1,10 @@
 # preact-tailwind-todo-app
+Simple Preact To Do App demonstration using Tailwind CSS, TypeScript and Preact
+
+![App Preview](./src/assets/app_preview.png)
+
+<hr/>
+
 
 ## CLI Commands
 *   `npm install`: Installs dependencies
@@ -15,5 +21,3 @@
     [`enzyme-adapter-preact-pure`](https://github.com/preactjs/enzyme-adapter-preact-pure) for
     your tests
 
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
