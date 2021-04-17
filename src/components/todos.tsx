@@ -9,6 +9,9 @@ export const Todos = () => {
     const [todos, setTodos] = useState<Todo[]>(someTodos)
     const [task, setTask] = useState({title: "", descr: ""})
     const [counter, setCounter] = useState<number>(1)
+    
+    const remainingTodos = todos.filter(todo => todo.done === true).length
+    const todosLength = todos.length
 
     const handleDeleteTodo = (id: number) => {
         const updatedTodos = todos.filter(todo => todo.id !== id) 
@@ -59,8 +62,8 @@ export const Todos = () => {
 
 
     return (
-        <section>
-            <h1>My todos</h1>
+        <section className="shadow-md rounded-sm p-5">
+            <h1 className="text-3xl mb-5 text-indigo-500">My todos</h1>
             <div>
             { todos.map(todo => (
                <Row key={todo.id} todo={todo} 
@@ -68,14 +71,16 @@ export const Todos = () => {
                handleCheckTodo={handleCheckTodo}
                /> 
             ))}
+            </div>
+            <p>Remaining to-dos: <span className="font-bold">{remainingTodos} out of {todosLength}</span></p>
             <AddTodo 
                 title={task.title}
                 descr={task.descr}
                 handleChange={handleChange}
                 handleSubmitTodo={handleSubmitTodo}
-                
+
                 />
-                </div>
+
         </section>
     )
 }

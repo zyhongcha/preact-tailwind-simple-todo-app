@@ -1,5 +1,7 @@
 import { h } from 'preact';
-import PlusSign from '../assets/done_black_24dp.svg'
+// import PlusSign from '../assets/done_black_24dp.svg'
+
+const Plus = () => (<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>)
 
 
 export type AddTodoProps = {
@@ -15,13 +17,14 @@ export const AddTodo =  ({
     handleChange
 }: AddTodoProps ) => {
     return (
-        <form onSubmit={handleSubmitTodo}>
+        <form onSubmit={handleSubmitTodo} className="mt-10">
+            <h2 className="text-2xl text-indigo-500">Add a new to-do</h2>
             <label for="title">Title</label>
-            <input type="text" name="title" value={title} onInput={handleChange} />
+            <input className="block h-8 w-full" type="text" name="title" required value={title} onInput={handleChange} />
             <label for="descr">Description</label>
-            <input type="text" name="descr" value={descr} onInput={handleChange} />
-            <button type="submit" aria-label="Add to-do to list">
-            {/* <PlusSign /> */}
+            <input className="block h-8 w-full" type="text" name="descr" required value={descr} onInput={handleChange} />
+            <button type="submit" className="block text-right bg-yellow-300 p-1 float-right" aria-label="Add to-do to list">
+            <Plus/>
             </button>
         </form>
     )
