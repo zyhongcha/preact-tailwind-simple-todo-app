@@ -3,8 +3,8 @@ Simple Preact To Do App demonstration using Tailwind CSS, TypeScript and Preact
 
 ![App Preview](./src/assets/app_preview.png)
 
-<hr/>
 
+<hr/>
 
 ## CLI Commands
 *   `npm install`: Installs dependencies

@@ -18,7 +18,7 @@ export const Row = ({todo: {id, title, descr, done},
     handleDeleteTodo,
     handleCheckTodo
 }: TodoProps ) => (
-        <div className={`flex w-full p-4 mb-2 gap-x-8 justify-between items-center ${done ? "filter grayscale" : "bg-gray-200"}`}>
+        <div className={`flex w-full p-4 mb-2 gap-x-8 justify-between items-center ${done ? "filter grayscale dark:bg-gray-800" : "bg-gray-200"}`}>
         <span className={`ml-2 text-xl font-sans ${done ? "line-through" : "text-gray-700"}`}>
         <p className="font-medium">{title}</p>
         <p className="text-sm">{descr}</p>

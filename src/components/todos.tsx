@@ -62,8 +62,8 @@ export const Todos = () => {
 
 
     return (
-        <section className="shadow-md rounded-sm p-5">
-            <h1 className="text-3xl mb-5 text-indigo-500">My todos</h1>
+        <section className="shadow-md rounded-sm p-5 dark:bg-gray-700">
+            <h1 className="text-3xl mb-5 text-indigo-500 dark:text-yellow-300">My todos</h1>
             <div>
             { todos.map(todo => (
                <Row key={todo.id} todo={todo} 
